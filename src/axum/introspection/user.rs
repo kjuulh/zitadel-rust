@@ -1,10 +1,13 @@
 use axum::{
     async_trait,
     extract::{FromRef, FromRequestParts},
-    headers::{authorization::Bearer, Authorization},
     http::request::Parts,
     response::IntoResponse,
-    Json, RequestPartsExt, TypedHeader,
+    Json, RequestPartsExt,
+};
+use axum_extra::{
+    headers::{authorization::Bearer, Authorization},
+    TypedHeader,
 };
 use custom_error::custom_error;
 use openidconnect::TokenIntrospectionResponse;
